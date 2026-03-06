@@ -77,19 +77,25 @@ kubectl delete -f simple-workflows/nginx-deployment.yaml
 kubectl get deployment nginx-deployment -o yaml
 ```
 
-12. Get Namespaces
+12. Minikube expose service
+
+```
+minikube service mongo-express-service
+```
+
+13. Get Namespaces
 
 ```
 kubectl get namespace
 ```
 
-13. Create Namespace
+14. Create Namespace
 
 ```
 kubectl create namespace my-namespace
 ```
 
-14. Change Local Namespace
+15. Change Local Namespace
 
 ```
 kubectl config set-context --current --namespace=test-namespace
@@ -99,3 +105,46 @@ Validation:
 ```
 kubectl config view --minify | grep namespace:
 ```
+
+16. Helm Create Chart
+
+```
+helm create my-chart
+```
+
+17. Helm Install Chart
+
+```
+helm install releaseName path/to/chart-directory
+```
+
+18. Helm Uninstall Chart
+
+```
+helm uninstall releaseName
+```
+
+19. Helm List Releases
+
+```
+helm list
+```
+
+20. Helm Upgrade Release
+
+```
+helm upgrade releaseName path/to/chart-directory
+```
+
+21. Helm Rollback Release
+
+```
+helm rollback releaseName revisionNumber
+```
+
+Get revision number:
+
+```
+helm history releaseName
+```
+

@@ -1,0 +1,23 @@
+mongodb:
+  auth:
+    enabled: true
+    rootUser: root
+    rootPassword: password123
+  podSecurityContext:
+    fsGroup: 1001
+  volumePermissions:
+    enabled: true
+
+mongoExpress:
+  enabled: true
+  image:
+    repository: mongo-express
+    tag: latest
+
+  service:
+    type: LoadBalancer
+    port: 8081
+
+  mongodb:
+    username: root
+    password: password123

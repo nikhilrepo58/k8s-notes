@@ -33,8 +33,13 @@ Append this function:
 ```bash
 kube_ps1() {
   context=$(kubectl config current-context 2>/dev/null)
+
   if [ -n "$context" ]; then
-    echo " [$context]"
+    if kubectl cluster-info >/dev/null 2>&1; then
+      echo " [$context ✔]"
+    else
+      echo " [$context ✘]"
+    fi
   fi
 }
 ```

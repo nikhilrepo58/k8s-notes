@@ -158,6 +158,11 @@ http://localhost:<nodePort>
 
 WSL2 automatically forwards exposed ports to Windows.
 
+
+## 7. Install Helm
+
+Follow OS Specific Instructions from here: https://helm.sh/docs/intro/install/
+
 ---
 
 ## Cluster Lifecycle Commands
