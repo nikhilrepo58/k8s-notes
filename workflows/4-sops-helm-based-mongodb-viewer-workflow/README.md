@@ -2,6 +2,8 @@
 
 **[Note: Never push values-secret.yaml and age.key in the repo. Since it is learning repo, It's pushed]**
 
+SOPS is basically encrypting the secrets and storing them on git itself instead of managing it separately via external secrets operator or unsecured default secrets. We can enable encryption at rest in secrets but it still doesn't solve the problem of enabling GitOps i.e., managing secrets in version control for consistency.
+
 1. install SOPS
 
 https://github.com/getsops/sops/releases
