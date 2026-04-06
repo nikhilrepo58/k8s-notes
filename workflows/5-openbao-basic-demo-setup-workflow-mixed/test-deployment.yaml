@@ -17,6 +17,13 @@ spec:
       - name: test
         image: busybox
         command: ["/bin/sh", "-c"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
         args:
           - |
             echo "Checking env vars...";
